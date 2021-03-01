@@ -155,18 +155,18 @@ var nsfwimp = [{
 }, {
   name: 'hitomi',
   match: "^http(s)?://hitomi.la/reader/[0-9]+.html",
-  img: '#comicImages > img',
-  next: '#comicImages > img',
+  img: '#comicImages img',
+  next: '#comicImages img',
   numpages: function() {
-    return W.images.length;
+    return W.our_galleryinfo.length;
   },
   curpage: function() {
     return parseInt(W.curPanel);
   },
   pages: function(url, num, cb, ex) {
-    cb(W.images[num - 1].path, num);
+    cb(W.url_from_url_from_hash(W.galleryinfo.id, W.our_galleryinfo[num-1]), num);
   },
-  wait: '#comicImages > img'
+  wait: '#comicImages img'
 }, {
   name: 'doujin-moe',
   _pages: null,
